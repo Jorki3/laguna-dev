@@ -1,0 +1,46 @@
+---
+import ANav from "./ANav.astro";
+---
+
+<header class="w-full py-8 px-4 flex flex-row">
+  <!-- Logo -->
+  <div class="font-extrabold text-green-600 flex flex-1 flex-row text-4xl">
+    <div>
+      <span>
+        <svg
+          width="45"
+          height="45"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-code"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M7 8l-4 4l4 4"></path>
+          <path d="M17 8l4 4l-4 4"></path>
+          <path d="M14 4l-4 16"></path>
+        </svg>
+      </span>
+    </div>
+
+    <div class="flex-1 hidden md:block">
+      <span class="text-white">Desarrolladores</span>Laguna
+    </div>
+
+    <div class="flex-1 block md:hidden">
+      <span class="text-white">D</span>L
+    </div>
+  </div>
+
+  <!-- Nav -->
+  <!-- TODO: Agregar Menu de hamburguesa -->
+  <div class="flex-1 flex flex-row justify-between">
+    <ANav href="/">Inicio</ANav>
+    <ANav href="/">About</ANav>
+    <ANav href="/">Eventos</ANav>
+    <ANav href="/">Contacto</ANav>
+  </div>
+</header>
