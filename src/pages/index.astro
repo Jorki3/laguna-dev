@@ -1,10 +1,270 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import localFlayerSM from "../../public/flayer.jpg";
+import { Image } from "astro:assets";
 ---
 
 <Layout title="Bienvenido">
-  <h1 class="text-center text-6xl text-white font-extrabold">
-    Bienvenido a Laguna DEV
-  </h1>
+  <div class="text-center space-y-2">
+    <h1 class="text-center text-6xl font-black">Bienvenido a Laguna DEV</h1>
+
+    <p class="text-green-600 text-3xl font-bold">Desarrollando a La Laguna</p>
+  </div>
+
+  <div class="mt-4">
+    <Card title="Proximo evento">
+      <div class="flex flex-col md:space-x-2 md:flex-row">
+        <div class="flex-1">
+          <div>
+            <div class="flex flex-row justify-between">
+              <p class="flex">
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-calendar-month"
+                    ><path stroke="none" d="M0 0h24v24H0z" fill="none"
+                    ></path><path
+                      d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"
+                    ></path><path d="M16 3v4"></path><path d="M8 3v4"
+                    ></path><path d="M4 11h16"></path><path d="M7 14h.013"
+                    ></path><path d="M10.01 14h.005"></path><path
+                      d="M13.01 14h.005"></path><path d="M16.015 14h.005"
+                    ></path><path d="M13.015 17h.005"></path><path
+                      d="M7.01 17h.005"></path><path d="M10.01 17h.005"
+                    ></path></svg
+                  ></span
+                >
+                Fecha: 15/08/2024
+              </p>
+
+              <p class="flex">
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-clock-hour-7"
+                    ><path stroke="none" d="M0 0h24v24H0z" fill="none"
+                    ></path><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"
+                    ></path><path d="M12 12l-2 3"></path><path d="M12 7v5"
+                    ></path></svg
+                  >
+                </span>
+                Hora: 19:00
+              </p>
+            </div>
+
+            <p class="flex">
+              <span
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-map-pin"
+                  ><path stroke="none" d="M0 0h24v24H0z" fill="none"
+                  ></path><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"
+                  ></path><path
+                    d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"
+                  ></path></svg
+                ></span
+              >
+              Ubicación: Apolo Urban Kitchen TRC
+            </p>
+          </div>
+
+          <h3 class="font-bold text-xl mt-5 flex">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-microphone"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                  d="M9 2m0 3a3 3 0 0 1 3 -3h0a3 3 0 0 1 3 3v5a3 3 0 0 1 -3 3h0a3 3 0 0 1 -3 -3z"
+                ></path><path d="M5 10a7 7 0 0 0 14 0"></path><path
+                  d="M8 21l8 0"></path><path d="M12 17l0 4"></path></svg
+              ></span
+            >
+            Platicas:
+          </h3>
+
+          <div class="space-y-3">
+            <div class="space-y-1">
+              <p class="text-2xl font-semibold">
+                OpenAI en .NET <span class="text-green-600 font-normal"
+                  >Fabrizio Arriola</span
+                >
+              </p>
+              <div class="flex space-x-4">
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-openai"
+                    ><path stroke="none" d="M0 0h24v24H0z" fill="none"
+                    ></path><path
+                      d="M11.217 19.384a3.501 3.501 0 0 0 6.783 -1.217v-5.167l-6 -3.35"
+                    ></path><path
+                      d="M5.214 15.014a3.501 3.501 0 0 0 4.446 5.266l4.34 -2.534v-6.946"
+                    ></path><path
+                      d="M6 7.63c-1.391 -.236 -2.787 .395 -3.534 1.689a3.474 3.474 0 0 0 1.271 4.745l4.263 2.514l6 -3.348"
+                    ></path><path
+                      d="M12.783 4.616a3.501 3.501 0 0 0 -6.783 1.217v5.067l6 3.45"
+                    ></path><path
+                      d="M18.786 8.986a3.501 3.501 0 0 0 -4.446 -5.266l-4.34 2.534v6.946"
+                    ></path><path
+                      d="M18 16.302c1.391 .236 2.787 -.395 3.534 -1.689a3.474 3.474 0 0 0 -1.271 -4.745l-4.308 -2.514l-5.955 3.42"
+                    ></path></svg
+                  >
+                </span>
+
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-c-sharp"
+                    ><path stroke="none" d="M0 0h24v24H0z" fill="none"
+                    ></path><path
+                      d="M10 9a3 3 0 0 0 -3 -3h-.5a3.5 3.5 0 0 0 -3.5 3.5v5a3.5 3.5 0 0 0 3.5 3.5h.5a3 3 0 0 0 3 -3"
+                    ></path><path d="M16 7l-1 10"></path><path d="M20 7l-1 10"
+                    ></path><path d="M14 10h7.5"></path><path d="M21 14h-7.5"
+                    ></path></svg
+                  >
+                </span>
+              </div>
+            </div>
+
+            <div class="space-y-1">
+              <p class="text-2xl font-semibold">
+                GIT - Buenas practicas y consejos avanzados <span
+                  class="text-green-600 font-normal"
+                  >Leonardo Salazar - @SCLEO97
+                </span>
+                <div class="flex space-x-4">
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="icon icon-tabler icons-tabler-outline icon-tabler-brand-git"
+                      ><path stroke="none" d="M0 0h24v24H0z" fill="none"
+                      ></path><path d="M16 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+                      ></path><path d="M12 8m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+                      ></path><path d="M12 16m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
+                      ></path><path d="M12 15v-6"></path><path d="M15 11l-2 -2"
+                      ></path><path d="M11 7l-1.9 -1.9"></path><path
+                        d="M13.446 2.6l7.955 7.954a2.045 2.045 0 0 1 0 2.892l-7.955 7.955a2.045 2.045 0 0 1 -2.892 0l-7.955 -7.955a2.045 2.045 0 0 1 0 -2.892l7.955 -7.955a2.045 2.045 0 0 1 2.892 0z"
+                      ></path></svg
+                    >
+                  </span>
+                </div>
+              </p>
+            </div>
+          </div>
+
+          <h3 class="font-bold text-xl mt-5 flex space-x-2">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-ticket"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                  d="M15 5l0 2"></path><path d="M15 11l0 2"></path><path
+                  d="M15 17l0 2"></path><path
+                  d="M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-3a2 2 0 0 0 0 -4v-3a2 2 0 0 1 2 -2"
+                ></path></svg
+              >
+            </span>
+            Boleto:
+
+            <a
+              href="https://www.eventbrite.com/e/dev-meetup-0824-tickets-982998443807?aff=oddtdtcreator"
+              target="_blank"
+              class="text-green-600"
+            >
+              Da click para conseguir tu boleto
+            </a>
+          </h3>
+
+          <div>
+            <p class="text-justify">
+              Encuentra tu boleto a este evento <b>gratuito</b> y ven a compartir
+              un buen momento con mas personas como tu. Recuerda, invita a tus amigos,
+              compañeros de trabajo, familia.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex-1">
+          <Image
+            src={localFlayerSM}
+            alt="Flayer de evento TRC JS"
+            class="my-auto rounded-r-lg"
+          />
+        </div>
+      </div>
+    </Card>
+  </div>
+
+  <div class="mt-4">
+    <Card title="Unete">
+      <p class="text-center">
+        Se parte de esta comunidad unete a nuestro grupo de whatsapp
+      </p>
+    </Card>
+  </div>
 </Layout>
