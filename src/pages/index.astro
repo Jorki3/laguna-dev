@@ -6,8 +6,8 @@ import { Image } from "astro:assets";
 ---
 
 <Layout title="Bienvenido">
-  <div class="text-center space-y-2">
-    <h1 class="text-center text-6xl font-black">Bienvenido a Laguna DEV</h1>
+  <div class="text-center space-y-4">
+    <h1 class="text-center text-6xl font-black">Bienvenid@ a Laguna DEV</h1>
 
     <p class="text-green-600 text-3xl font-bold">Desarrollando a La Laguna</p>
   </div>
@@ -261,10 +261,54 @@ import { Image } from "astro:assets";
   </div>
 
   <div class="mt-4">
-    <Card title="Unete">
-      <p class="text-center">
-        Se parte de esta comunidad unete a nuestro grupo de whatsapp
+    <Card title="Únete a nuestra comunidad de programadores">
+      <p class="text-justify">
+        ¿Eres apasionado por la programación y quieres conectar con otros
+        desarrolladores que compartan tus intereses? ¡Entonces, únete a nuestra
+        comunidad de programadores en WhatsApp! <b>En nuestro grupo, podrás:</b>
       </p>
+
+      <ul class="list-disc ml-5">
+        <li>Conectar con otros programadores de México y del mundo</li>
+        <li class="text-green-600">Compartir conocimientos y experiencias</li>
+        <li>Obtener ayuda y soporte en tus proyectos</li>
+        <li class="text-green-600">
+          Participar en discusiones y debates sobre las últimas tendencias en
+          programación
+        </li>
+        <li>Acceder a recursos y herramientas exclusivas para programadores</li>
+      </ul>
+
+      <p class="text-center">
+        <span class="text-green-600 font-bold">¡No esperes más!</span> Únete a nuestra
+        comunidad hoy mismo y comienza a conectar con otros programadores que comparten
+        tus pasiones!
+      </p>
+
+      <!-- TODO: Convertir en etiqueta a para enviar a whatsapp -->
+      <button
+        class="px-4 py-3 text-center text-2xl flex text-green-600 border mx-auto mt-4 border-green-600 hover:bg-green-600 hover:text-zinc-800 border-spacing-1 rounded-full transition ease-in-out hover:ease-in hover:animate-pulse hover:-translate-y-1"
+      >
+        <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp"
+            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+              d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path><path
+              d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"
+            ></path></svg
+          >
+        </span>
+        WhatsApp
+      </button>
     </Card>
   </div>
 </Layout>
