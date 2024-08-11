@@ -1,4 +1,5 @@
 ---
+import Nav from "./Nav.astro";
 import ANav from "./ANav.astro";
 ---
 
@@ -36,11 +37,12 @@ import ANav from "./ANav.astro";
   </div>
 
   <!-- Nav -->
-  <!-- TODO: Agregar Menu de hamburguesa -->
-  <div class="flex-1 flex flex-row justify-between">
-    <ANav href="/">Inicio</ANav>
-    <ANav href="/about">About</ANav>
-    <ANav href="/">Eventos</ANav>
-    <ANav href="/">Contacto</ANav>
+  <div class="flex-1">
+    <Nav>
+      <ANav href="/">Inicio</ANav>
+      <ANav href="/about">About</ANav>
+      <ANav href="/">Eventos</ANav>
+      <ANav href="/">Contacto</ANav>
+    </Nav>
   </div>
 </header>
