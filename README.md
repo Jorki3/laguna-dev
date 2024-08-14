@@ -4,8 +4,8 @@ Laguna Dev es una comunidad en línea para programadores y profesionales de la t
 ## Tecnologías y Recursos
 ### Tecnologías
 * Astro: Framework para construir aplicaciones web [Documentación de Astro](https://astro.build/)
-* Alpine.js: Framework para JavaScript [Documentación de AlpineJS]((https://alpinejs.dev/))
-* Tailwind CSS: Framework para estilos CSS [Documentación de TailwindCSS]((https://tailwindcss.com/))
+* Alpine.js: Framework para JavaScript [Documentación de AlpineJS](https://alpinejs.dev/)
+* Tailwind CSS: Framework para estilos CSS [Documentación de TailwindCSS](https://tailwindcss.com/)
 ### Recursos
 * Iconos: [TablerIcons](https://tabler.io/icons)
 ## Instalación y Configuración
