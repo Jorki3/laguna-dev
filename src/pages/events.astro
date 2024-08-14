@@ -1,0 +1,144 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+
+import { events } from "../config/events.json";
+---
+
+<Layout title="Eventos">
+  <div class="grid grid-cols-2 gap-4">
+    {
+      events.map((event) => (
+        <div class="space-y-4">
+          <Card title="">
+            <div>
+              <div class="flex flex-row justify-between">
+                <p class="flex">
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="icon icon-tabler icons-tabler-outline icon-tabler-calendar-month"
+                    >
+                      <>
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" />
+                        <path d="M16 3v4" />
+                        <path d="M8 3v4" />
+                        <path d="M4 11h16" />
+                        <path d="M7 14h.013" />
+                        <path d="M10.01 14h.005" />
+                        <path d="M13.01 14h.005" />
+                        <path d="M16.015 14h.005" />
+                        <path d="M13.015 17h.005" />
+                        <path d="M7.01 17h.005" />
+                        <path d="M10.01 17h.005" />
+                      </>
+                    </svg>
+                  </span>
+                  Fecha: {event.date}
+                </p>
+
+                <p class="flex">
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="icon icon-tabler icons-tabler-outline icon-tabler-clock-hour-7"
+                    >
+                      <>
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                        <path d="M12 12l-2 3" />
+                        <path d="M12 7v5" />
+                      </>
+                    </svg>
+                  </span>
+                  Hora: {event.hour}
+                </p>
+              </div>
+
+              <p class="flex">
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-map-pin"
+                  >
+                    <>
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                      <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+                    </>
+                  </svg>
+                </span>
+                Ubicación: {event.location}
+              </p>
+            </div>
+
+            <h3 class="font-bold text-xl mt-5 flex">
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-microphone"
+                >
+                  <>
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M9 2m0 3a3 3 0 0 1 3 -3h0a3 3 0 0 1 3 3v5a3 3 0 0 1 -3 3h0a3 3 0 0 1 -3 -3z" />
+                    <path d="M5 10a7 7 0 0 0 14 0" />
+                    <path d="M8 21l8 0" />
+                    <path d="M12 17l0 4" />
+                  </>
+                </svg>
+              </span>
+              Platicas:
+            </h3>
+
+            <div class="space-y-3">
+              {event.talks.map((talk) => (
+                <div class="space-y-1">
+                  <p class="text-2xl font-semibold">
+                    {talk.name}
+                    <span class="text-green-600 font-normal">
+                      {talk.author}
+                    </span>
+                  </p>
+                  <div class="flex space-x-4">{talk.technologies}</div>
+                </div>
+              ))}
+            </div>
+          </Card>
+        </div>
+      ))
+    }
+  </div>
+</Layout>

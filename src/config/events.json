@@ -1,0 +1,153 @@
+{
+    "events":[
+        {
+            "date": "18/01/2024",
+            "location": "Igniter Business Center",
+            "hour": "18:00",
+            "talks":[
+                {
+                    "author": "Eduardo Martinez",
+                    "name": "TALL stack - apps reactivas en PHP",
+                    "technologies": [
+                        "Laravel",
+                        "PHP"
+                    ]
+                },
+                {
+                    "author": "Jesús Rincón",
+                    "name": "Explorando Filament: El TALL Stack con baterías incluidas",
+                    "technologies": [
+                        "Laravel",
+                        "PHP"
+                    ]
+                }
+            ]
+        },
+        {
+            "date": "15/02/2024",
+            "location": "Igniter Business Center",
+            "hour": "18:00",
+            "talks": [
+                {
+                    "author": "Cesar Azpilcueta",
+                    "name": "Webassembly en el Navegador con C#",
+                    "technologies": [
+                        "C#"
+                    ]
+                },
+                {
+                    "author": "Ernesto Cobos",
+                    "name": "Introducción a la infrastructura como Código en la Nube",
+                    "technologies": [
+                        "Nube"
+                    ]
+                }
+            ]
+        },
+        {
+            "date": "21/03/2024",
+            "location": "Cafelina Café",
+            "hour": "19:00",
+            "talks": [
+                {
+                    "author": "@migueglz",
+                    "name": "Las malas buenas prácticas",
+                    "technologies": [
+                        "</>"
+                    ]
+                },
+                {
+                    "author": "Rodrigo Pérez",
+                    "name": "Vitest vs Jest",
+                    "technologies": [
+                        "Pruebas"
+                    ]
+                }
+            ]
+        },
+        {
+            "date": "25/04/2024",
+            "location": "Apolo Urban Kitchen TRC",
+            "hour": "19:00",
+            "talks": [
+                {
+                    "author": "Paco Aguilera",
+                    "name": "AirTable: Un excel relacional con chochos",
+                    "technologies": [
+                        "</>"
+                    ]
+                },
+                {
+                    "author": "Daniel Álvarez",
+                    "name": "From Pixels to Production",
+                    "technologies": [
+                        "?"
+                    ]
+                }
+            ]
+        },
+        {
+            "date": "16/05/2024",
+            "location": "Cafelina Café",
+            "hour": "19:00",
+            "talks": [
+                {
+                    "author": "Jesús Hernández",
+                    "name": "Porque elegí ser desarrollador de software",
+                    "technologies": [
+                        "</>"
+                    ]
+                },
+                {
+                    "author": "Paolo García",
+                    "name": "Functional Javascript",
+                    "technologies": [
+                        "JS"
+                    ]
+                }
+            ]
+        },
+        {
+            "date": "20/06/2024",
+            "location": "Apolo Urban Kitchen TRC",
+            "hour": "19:00",
+            "talks": [
+                {
+                    "author": "Omar Sanchez",
+                    "name": "Kotlin",
+                    "technologies": [
+                        "Kotlin"
+                    ]
+                },
+                {
+                    "author": "Gera Morán",
+                    "name": "CI - Implementación y buenas prácticas",
+                    "technologies": [
+                        "git"
+                    ]
+                }
+            ]
+        },
+        {
+            "date": "18/07/2024",
+            "location": "Ahjijob",
+            "hour": "19:00",
+            "talks": [
+                {
+                    "author": "Angel Sandoval",
+                    "name": "Scrum: Un marco de trabajo agil y adaptable - Role y responsabilidades clave",
+                    "technologies": [
+                        "</>"
+                    ]
+                },
+                {
+                    "author": "Jesús Uresti",
+                    "name": "Low-Code: Una introducción practica con OutSystem",
+                    "technologies": [
+                        "git"
+                    ]
+                }
+            ]
+        }
+    ]
+}
