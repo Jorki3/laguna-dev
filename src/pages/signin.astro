@@ -1,0 +1,121 @@
+---
+import { app } from "../firebase/server";
+import { getAuth } from "firebase-admin/auth";
+import AuthLayout from "../layouts/AuthLayout.astro";
+
+/* Verificar si el usuario está autenticado */
+const auth = getAuth(app);
+if (Astro.cookies.has("__session")) {
+  const sessionCookie = Astro.cookies.get("__session")?.value;
+
+  if (sessionCookie) {
+    const decodedCookie = await auth.verifySessionCookie(sessionCookie);
+    if (decodedCookie) {
+      return Astro.redirect("/dashboard");
+    }
+  }
+}
+---
+
+<AuthLayout title="Iniciar Sesión">
+  <h1 class="text-5xl text-center font-black my-4">Iniciar Sesión</h1>
+
+  <form action="/api/auth/signin" method="post">
+    <div class="my-2">
+      <label class="text-xl mb-2" for="email">Correo electrónico</label>
+      <input
+        class="w-full rounded-xl py-3 bg-zinc-700 px-4"
+        type="email"
+        name="email"
+        id="email"
+      />
+    </div>
+
+    <div class="my-2">
+      <label class="text-xl mb-2" for="password">Contraseña</label>
+      <input
+        class="w-full rounded-xl py-3 bg-zinc-700 px-4"
+        type="password"
+        name="password"
+        id="password"
+      />
+    </div>
+
+    <button
+      type="submit"
+      class="px-4 py-2 my-6 mx-auto text-3xl block ring-1 ring-green-600 text-green-600 rounded-lg transition ease-in-out hover:ease-in hover:animate-pulse hover:-translate-y-1"
+    >
+      Iniciar sesión
+    </button>
+  </form>
+
+  <button
+    id="google"
+    class="px-4 py-2 my-6 mx-auto text-3xl block ring-1 ring-blue-600 text-blue-600 rounded-lg transition ease-in-out hover:ease-in hover:animate-pulse hover:-translate-y-1"
+  >
+    Iniciar sesión con Google
+  </button>
+
+  <p class="text-right">
+    ¿Eres nuevo aquí? <a href="/register">Crear una cuenta</a>
+  </p>
+</AuthLayout>
+
+<script>
+  import {
+    getAuth,
+    inMemoryPersistence,
+    signInWithEmailAndPassword,
+    GoogleAuthProvider,
+    signInWithPopup,
+  } from "firebase/auth";
+  import { app } from "../firebase/client";
+
+  const auth = getAuth(app);
+  // Esto evitará que el navegador almacene los datos de sesión
+  auth.setPersistence(inMemoryPersistence);
+
+  const form = document.querySelector("form") as HTMLFormElement;
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const email = formData.get("email")?.toString();
+    const password = formData.get("password")?.toString();
+
+    if (!email || !password) {
+      return;
+    }
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    const idToken = await userCredential.user.getIdToken();
+    const response = await fetch("/api/auth/signin", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${idToken}`,
+      },
+    });
+
+    if (response.redirected) {
+      window.location.assign(response.url);
+    }
+  });
+
+  const googleSignin = document.querySelector("#google") as HTMLButtonElement;
+  googleSignin.addEventListener("click", async () => {
+    const provider = new GoogleAuthProvider();
+    const userCredential = await signInWithPopup(auth, provider);
+    const idToken = await userCredential.user.getIdToken();
+    const res = await fetch("/api/auth/signin", {
+      headers: {
+        Authorization: `Bearer ${idToken}`,
+      },
+    });
+
+    if (res.redirected) {
+      window.location.assign(res.url);
+    }
+  });
+</script>

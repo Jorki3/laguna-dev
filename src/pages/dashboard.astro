@@ -1,0 +1,39 @@
+---
+import { app } from "../firebase/server";
+import { getAuth } from "firebase-admin/auth";
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+
+const auth = getAuth(app);
+
+/* Verificar la sesión actual */
+const sessionCookie = Astro.cookies.get("__session")?.value;
+
+if (sessionCookie) {
+  try {
+    const decodedCookie = await auth.verifySessionCookie(sessionCookie);
+    const user = await auth.getUser(decodedCookie.uid);
+
+    if (!user) {
+      return Astro.redirect("/signin");
+    }
+
+    // Resto del código para manejar el usuario autenticado
+  } catch (error) {
+    console.error("Error verifying session cookie:", error);
+    return Astro.redirect("/signin");
+  }
+} else {
+  return Astro.redirect("/signin");
+}
+---
+
+<Layout title="dashboard">
+  <Card title="Dashboard">
+    <h1>Bienvenido</h1>
+    <p>Nos alegra verte aquí</p>
+    <form action="/api/auth/signout">
+      <button type="submit">Cerrar sesión</button>
+    </form>
+  </Card>
+</Layout>

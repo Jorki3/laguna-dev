@@ -1,0 +1,50 @@
+---
+import AuthLayout from "../layouts/AuthLayout.astro";
+---
+
+<AuthLayout title="Registro">
+  <h1 class="text-5xl text-center font-black my-4">Registro</h1>
+
+  <form action="/api/auth/register" method="post">
+    <div class="my-2">
+      <label class="text-xl mb-2" for="name">Nombre</label>
+      <input
+        class="w-full rounded-xl py-3 bg-zinc-700 px-4"
+        type="text"
+        name="name"
+        id="name"
+      />
+    </div>
+
+    <div class="my-2">
+      <label class="text-xl mb-2" for="email">Correo electrónico</label>
+      <input
+        class="w-full rounded-xl py-3 bg-zinc-700 px-4"
+        type="email"
+        name="email"
+        id="email"
+      />
+    </div>
+
+    <div class="my-2">
+      <label class="text-xl mb-2" for="password">Contraseña</label>
+      <input
+        class="w-full rounded-xl py-3 bg-zinc-700 px-4"
+        type="password"
+        name="password"
+        id="password"
+      />
+    </div>
+
+    <button
+      type="submit"
+      class="px-4 py-2 my-6 mx-auto text-3xl block ring-1 ring-green-600 text-green-600 rounded-lg transition ease-in-out hover:ease-in hover:animate-pulse hover:-translate-y-1"
+    >
+      Iniciar sesión
+    </button>
+  </form>
+
+  <p class="text-right">
+    ¿Ya tienes una cuenta? <a href="/signin">Iniciar sesión</a>
+  </p>
+</AuthLayout>

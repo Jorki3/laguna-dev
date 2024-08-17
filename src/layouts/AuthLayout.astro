@@ -1,0 +1,70 @@
+---
+import Card from "../components/Card.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Comindad de programadores y desarrolladores de La Laguna"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/code.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} - Laguna Dev</title>
+  </head>
+  <body class="bg-zinc-900">
+    <main class="container mx-auto text-white">
+      <div
+        class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0"
+      >
+        <div
+          class="w-full sm:max-w-lg mt-6 px-6 py-4 shadow-md overflow-hidden sm:rounded-lg bg-zinc-800"
+        >
+          <!-- Logo -->
+          <div
+            class="font-extrabold text-green-600 flex flex-1 flex-row text-4xl"
+          >
+            <div>
+              <span>
+                <svg
+                  width="45"
+                  height="45"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-code"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M7 8l-4 4l4 4"></path>
+                  <path d="M17 8l4 4l-4 4"></path>
+                  <path d="M14 4l-4 16"></path>
+                </svg>
+              </span>
+            </div>
+
+            <div class="flex-1">
+              <span class="text-white">Desarrolladores</span>Laguna
+            </div>
+          </div>
+
+          <slot />
+        </div>
+      </div>
+    </main>
+  </body>
+
+  <Footer />
+</html>
