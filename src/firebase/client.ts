@@ -1,12 +1,12 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBi1YW6gtbnuNnyPh9Mh3wNjeOiDg5nY2Q",
-  authDomain: "laguna-dev-80c74.firebaseapp.com",
-  projectId: "laguna-dev-80c74",
-  storageBucket: "laguna-dev-80c74.appspot.com",
-  messagingSenderId: "1031722419256",
-  appId: "1:1031722419256:web:c0431ac713496ea7de92cd",
+  apiKey: import.meta.env.FIREBASE_API_KEY,
+  authDomain: import.meta.env.FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.FIREBASE_APP_ID,
 };
 
 export const app = initializeApp(firebaseConfig);
