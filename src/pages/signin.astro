@@ -20,7 +20,7 @@ if (Astro.cookies.has("__session")) {
 <AuthLayout title="Iniciar Sesión">
   <h1 class="text-5xl text-center font-black my-4">Iniciar Sesión</h1>
 
-  <form action="api/auth/signin" method="POST">
+  <form action="/api/auth/signin" method="POST">
     <div class="my-2">
       <label class="text-xl mb-2" for="email">Correo electrónico</label>
       <input
