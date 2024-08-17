@@ -3,6 +3,14 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import localFlayerSM from "../../public/flayer.jpg";
 import { Image } from "astro:assets";
+
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+
+const auth = getAuth();
+
+// Verifica la inicialización
+console.log("Firebase Auth initialized:", auth);
 ---
 
 <Layout title="Bienvenido">
