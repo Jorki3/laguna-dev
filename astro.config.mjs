@@ -7,9 +7,4 @@ import { server } from "typescript";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), alpinejs()],
-  // experimental: {
-  //   actions: true,
-  // },
-  // output: "server",
-  // adapter: netlify(),
 });

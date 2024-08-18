@@ -5,7 +5,7 @@ import AuthLayout from "../layouts/AuthLayout.astro";
 <AuthLayout title="Registro">
   <h1 class="text-5xl text-center font-black my-4">Registro</h1>
 
-  <form id="register">
+  <form action="/api/auth/register" method="POST">
     <div class="my-2">
       <label class="text-xl mb-2" for="name">Nombre</label>
       <input
@@ -47,15 +47,4 @@ import AuthLayout from "../layouts/AuthLayout.astro";
   <p class="text-right">
     ¿Ya tienes una cuenta? <a href="/signin">Iniciar sesión</a>
   </p>
-
-  <script>
-    import { actions } from "astro:actions";
-
-    const createForm = document.querySelector("#register") as HTMLFormElement;
-
-    createForm?.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      await actions.createAccount(new FormData(createForm));
-    });
-  </script>
 </AuthLayout>

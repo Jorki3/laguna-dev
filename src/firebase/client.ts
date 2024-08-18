@@ -1,4 +1,4 @@
-import { getAuth } from "firebase-admin/auth";
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
@@ -11,5 +11,4 @@ const firebaseConfig = {
   measurementId: "G-8LT8PGEX2F",
 };
 
-const app = initializeApp(firebaseConfig);
-export const projectAuth = getAuth(app);
+export const app = initializeApp(firebaseConfig);
