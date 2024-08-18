@@ -23,7 +23,9 @@ export const POST: APIRoute = async ({ request, redirect }) => {
       displayName: name,
     });
   } catch (error: any) {
-    return new Response("Algo salió mal", { status: 400 });
+    console.error("Error al crear usuario: ", error);
+
+    return new Response(`Algo salió mal: ${error}`, { status: 400 });
   }
   return redirect("/signin");
 };
