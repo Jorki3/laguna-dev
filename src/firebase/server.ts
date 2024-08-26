@@ -18,7 +18,7 @@ const serviceAccount = {
 const initApp = () => {
   if (import.meta.env.PROD) {
     console.info("PROD env detected. Using default service account.");
-    // Usa la configuración predeterminada en las funciones de Firebase. Debería estar ya inyectada en el servidor por Firebase.
+    // Use default config in firebase functions. Should be already injected in the server by Firebase.
     return initializeApp();
   }
   console.info("Loading service account from env.");
