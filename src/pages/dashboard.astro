@@ -1,37 +1,42 @@
 ---
-import { app } from "../firebase/server";
-import { getAuth } from "firebase-admin/auth";
-import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import Layout from "../layouts/Layout.astro";
+import { supabase } from "../lib/supabase";
 
-const auth = getAuth(app);
+const { cookies, redirect } = Astro;
 
-/* Verificar la sesión actual */
-const sessionCookie = Astro.cookies.get("__session")?.value;
+const accessToken = cookies.get("sb-access-token");
+const refreshToken = cookies.get("sb-refresh-token");
 
-if (sessionCookie) {
-  try {
-    const decodedCookie = await auth.verifySessionCookie(sessionCookie);
-    const user = await auth.getUser(decodedCookie.uid);
-
-    if (!user) {
-      return Astro.redirect("/signin");
-    }
-
-    // Resto del código para manejar el usuario autenticado
-  } catch (error) {
-    console.error("Error verifying session cookie:", error);
-    return Astro.redirect("/signin");
-  }
-} else {
-  return Astro.redirect("/signin");
+if (!accessToken || !refreshToken) {
+  return redirect("/signin");
 }
+
+const { data, error } = await supabase.auth.setSession({
+  refresh_token: refreshToken.value,
+  access_token: accessToken.value,
+});
+
+if (error) {
+  cookies.delete("sb-access-token", {
+    path: "/",
+  });
+  cookies.delete("sb-refresh-token", {
+    path: "/",
+  });
+
+  return redirect("/signin");
+}
+
+const email = data?.user?.email;
 ---
 
 <Layout title="Dashboard">
   <Card title="Dashboard">
-    <h1>Bienvenido</h1>
-    <p>Nos alegra verte aquí</p>
+    <h1>Bienvenido {email}</h1>
+
+    <p>Estamos felices de verte aquí</p>
+
     <form action="/api/auth/signout">
       <button type="submit">Cerrar sesión</button>
     </form>
